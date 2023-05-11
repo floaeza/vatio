@@ -1,0 +1,36 @@
+<div
+    *ngIf="products.length === 0; else table"
+    class="alert alert-warning text-center"
+>
+    No se encontraron productos 
+</div>
+
+<ng-template #table>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Modelo</th>
+                <th>Unidad de medida</th>
+                <th>Dimensiones</th>
+                <th>Cantidad cotizada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products; let i= index">
+                <td>{{ i +1 }}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.model}}</td>      
+                <td>{{product.unit_of_measurement}}</td>      
+                <td>{{product.dimensions}}</td>      
+                <td>{{product.amount_quoted}}</td>  
+                <th>
+                    <a href="#">Ver más</a>
+                </th>   
+            </tr>
+        </tbody>
+    </table>
+    
+</ng-template>

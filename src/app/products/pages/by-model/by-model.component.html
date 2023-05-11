@@ -1,0 +1,18 @@
+<h2>Búsqueda por modelo</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <shared-search-box
+            placeholder="Búsqueda por modelo"
+            (onValue)="searchByModel($event)"
+        >
+        </shared-search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <products-table [products]="products"></products-table>
+    </div>
+</div>
